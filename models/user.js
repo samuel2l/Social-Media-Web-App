@@ -32,6 +32,13 @@ const userSchema = mongooose.Schema(
       type: Array,
       default: [],
     },
+    bio:{
+        type:String,
+        max:50,
+    },
+    location:{
+        type:String
+    },
     isAdmin: {
       type: Boolean,
       default: false,
