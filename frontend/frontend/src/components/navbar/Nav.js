@@ -5,7 +5,7 @@ export default function Nav() {
   return (
 <div className="navBarContainer">
       <div className="navBarLeft">
-        <span className="logo">Lamasocial</span>
+        <span className="logo">echoSpace</span>
       </div>
       <div className="navBarCenter">
         <div className="searchbar">
