@@ -36,6 +36,6 @@ app.use((err,req,res,next)=>{
     
 })
 
-app.listen(3000, "0.0.0.0", () => {
+app.listen(8080,"0.0.0.0", () => {
   print("server up and running")
 })

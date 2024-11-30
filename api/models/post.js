@@ -1,10 +1,11 @@
 const mongooose = require("mongoose")
-
+const User=require('./user')
 const postSchema = mongooose.Schema(
   {
     userId: {
-      type: String,
+
       required: true,
+       type: mongooose.Schema.Types.ObjectId, ref: 'User' ,
     },
     caption: {
       type: String,

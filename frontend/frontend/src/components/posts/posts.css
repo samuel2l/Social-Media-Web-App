@@ -47,6 +47,13 @@
       width: 100%;
       max-height: 500px;
       object-fit: contain;
+      
+        width: 100%; /* Or a specific fixed width like 500px */
+        max-width: 800px; /* Prevents it from stretching too wide */
+        height: auto; /* Maintains the aspect ratio */
+        object-fit: cover; /* Ensures the image fits nicely */
+        display: block; /* Avoids extra space under the image */
+      
   }
   
   .postBottom{

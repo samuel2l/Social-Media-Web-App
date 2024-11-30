@@ -10,10 +10,10 @@ export default function Home() {
 <>
 <Nav />
 <div className="homeContainer">
-        {/* <Sidebar />
+        <Sidebar />
         <Feed/>
-        <RightBar  /> */}
-        <Signup />
+        <RightBar  />
+
       </div>
 </>
   )

@@ -1,0 +1,15 @@
+when trying to access assets from anywhere other than home route they probably will not load
+
+eg at the http://localhost:3000/profile/safak route if this page is to display some images it will not work cos most images are just assets/your img
+so when you go to a route like home page http://localhost:3000/ it can access the assets and display the imgs
+can be visualised like so http://localhost:3000/assets
+but for any other route the assets cannot be directly accessed
+so to do this we store the http://localhost:3000/ in a var and use it everywhere you barb
+so you can store it like this:REACT_APP_PUBLIC_FOLDER=http://localhost:3000/assets
+
+so in every part of app we are using some asset we remove the assets/ and just leave the image itself eg /like.png
+and we set up the app by simply concatenating the path with the public folder and the image
+
+eg
+const public_folder=process.env.REACT_APP_PUBLIC_FOLDER
+<img className="shareProfileImg" src={public_folder+"/1.jpeg"} alt="" />

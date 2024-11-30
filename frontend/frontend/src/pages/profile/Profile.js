@@ -5,7 +5,10 @@ import Feed from "../../components/feed/Feed";
 import Rightbar from "../../components/rightbar/Rightbar";
 
 export default function Profile() {
+  const public_folder=process.env.REACT_APP_PUBLIC_FOLDER
+
   return (
+    
     <>
       <Nav />
       <div className="profile">
@@ -15,12 +18,12 @@ export default function Profile() {
             <div className="profileCover">
               <img
                 className="profileCoverImg"
-                src="assets/post/3.jpeg"
+                src={public_folder+'/IMG_2835.JPG'}
                 alt=""
               />
               <img
                 className="profileUserImg"
-                src="assets/person/7.jpeg"
+                src={public_folder+"/IMG_2835.JPG"}
                 alt=""
               />
             </div>
