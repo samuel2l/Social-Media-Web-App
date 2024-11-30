@@ -12,10 +12,10 @@ export default function Signup() {
         </div>
         <div className="loginRight">
           <div className="loginBox">
-            <input placeholder="Username" className="loginInput" />
-            <input placeholder="Email" className="loginInput" />
-            <input placeholder="Password" className="loginInput" />
-            <input placeholder="Password Again" className="loginInput" />
+            <input placeholder="username" className="loginInput" />
+            <input placeholder="email" className="loginInput" />
+            <input placeholder="password" className="loginInput" />
+            <input placeholder="confirm password" className="loginInput" />
             <button className="loginButton">Sign Up</button>
             <button className="loginRegisterButton">
               Log into Account
