@@ -1,7 +1,33 @@
 const userRouter = require("express").Router()
 const User = require("../models/user")
+const Post=require("../models/post")
 const print=console.log
-// update profile
+
+//get user by username
+userRouter.get("/profile/:username", async (req, res, next) => {
+  try {
+    print('inside the get profile route')
+    const { username } = req.params
+    print('username in get rofile route',username)
+    const user = await User.findOne({username})
+    print(user)
+    
+    const user_posts= await Post.find({userId:user._id})
+   print('this user has posted ') 
+    print(user_posts)
+    if(user_posts==[]){
+      res.status(200).json('No posts yet')
+
+    }
+        
+
+    res.status(200).json(user_posts)
+  } catch (err) {
+    next(err)
+  }
+})
+
+
 userRouter.put("/:id", async (req, res, next) => {
   try {
     const { id } = req.params
@@ -36,10 +62,13 @@ userRouter.delete("/:id", async (req, res, next) => {
 })
 
 //get a user
-userRouter.get("/:id", async (req, res, next) => {
-    try {
-      const { id } = req.params
-      const user = await User.findById(id)
+userRouter.get("/", async (req, res, next) => {
+  const id=req.query.userId
+  const username=req.query.username
+
+  try {
+
+      const user = id? await User.findById(id):await User.findOne({username})
       //remove unneccessary props to display like users email and password
       const {email,password,...relevantUserProperties}=user._doc
 
@@ -95,5 +124,6 @@ userRouter.get("/:id", async (req, res, next) => {
     }
   })
   
+
   
 module.exports = userRouter
