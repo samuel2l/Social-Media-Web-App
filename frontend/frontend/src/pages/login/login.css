@@ -6,7 +6,12 @@
     align-items: center;
     justify-content: center;
   }
-  
+  form {
+    display: flex;
+    flex-direction: column;
+    height: 100%; 
+    justify-content: space-between; 
+  }
   .loginWrapper {
     width: 70%;
     height: 70%;
@@ -71,7 +76,7 @@
   }
   
   .loginRegisterButton{
-      width: 60%;
+      width: 100%;
       align-self: center;
       height: 50px;
       border-radius: 10px;

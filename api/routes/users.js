@@ -6,15 +6,10 @@ const print=console.log
 //get user by username
 userRouter.get("/profile/:username", async (req, res, next) => {
   try {
-    print('inside the get profile route')
     const { username } = req.params
-    print('username in get rofile route',username)
     const user = await User.findOne({username})
-    print(user)
     
     const user_posts= await Post.find({userId:user._id})
-   print('this user has posted ') 
-    print(user_posts)
     if(user_posts==[]){
       res.status(200).json('No posts yet')
 
@@ -83,7 +78,6 @@ userRouter.get("/", async (req, res, next) => {
         //figure out how to get the senders id as you need to add the followed user to current users following list
       const { id } = req.params
       const user = await User.findById(id)
-      print(user)
       if(!user.followers.includes("i added something")){
         await user.updateOne({$push:{followers:"i added something"}})
         res.send('followed the user')
@@ -106,7 +100,7 @@ userRouter.get("/", async (req, res, next) => {
         //figure out how to get the senders id as you need to add the followed user to current users following list
       const { id } = req.params
       const user = await User.findById(id)
-      print(user)
+      
       if(user.followers.includes("i added something")){
         await user.updateOne({$pull:{followers:"i added something"}})
         res.send('unfollowed the user')

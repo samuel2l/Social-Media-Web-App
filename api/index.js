@@ -23,9 +23,9 @@ mongoose
 
 app.use(express.json())
 app.use(helmet())
-app.use("/api/user",userRouter)
-app.use("/api/auth",authRouter)
-app.use('/api/post',postRouter)
+app.use("/api/user/",userRouter)
+app.use("/api/auth/",authRouter)
+app.use('/api/post/',postRouter)
 
 
 

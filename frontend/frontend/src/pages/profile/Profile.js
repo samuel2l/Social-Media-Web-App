@@ -12,6 +12,7 @@ export default function Profile() {
   const public_folder=process.env.REACT_APP_PUBLIC_FOLDER
   const [user, setUser] = useState({})
   const params=useParams()
+  // useParams is a React Router Hook that allows you to access the dynamic parameters in the URL. It’s commonly used for retrieving route parameters in Single Page Applications (SPAs).
   useEffect(() => {
     const fetchPosts = async () => {
       try {
